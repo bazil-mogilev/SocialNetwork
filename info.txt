@@ -1,0 +1,41 @@
+Проект: "Простая социальная сеть"
+MVC, MS SQL 2008 R2
+
+https://github.com/bazil-mogilev/SocialNetwork
+
+
+Дополнительная настройка в файле appSettings.config:
+"smtp_host" - адрес сервера SMTP (отправка уведовлений)
+
+"smtp_port" - порт сервера SMTP
+
+"smtp_mail" - почтовый адрес (sn_test@mail.ru)
+
+"smtp_password" - пароль (sntest)
+
+"base_application_url" - базовый URL адрес для web-приложения
+
+"notify_service" - сервис уведомлений 
+(для отправки уведомлений через электронную почту ="email",
+ для записи уведомлений в текстовый файл = "textfile")
+
+"textfile_path" - путь к текстовому фалу с уведомлениями
+
+Зарегистрированные пользователи:
+admin (модератор)
+nick
+serega
+ann
+mikola
+alex
+kate
+Ula
+olga 
+max
+serg
+Для всех пользователей пароль: 123456
+
+
+
+
+
