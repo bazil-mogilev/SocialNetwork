@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E977C08D-3C88-461E-BE39-D198FBFFBE8C}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SocialNetwork</RootNamespace>
+    <AssemblyName>SocialNetwork</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\EventMessageGenerator.cs" />
+    <Compile Include="Components\SerializationHelper.cs" />
+    <Compile Include="Controllers\DialogController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\BaseLogonController.cs" />
+    <Compile Include="Controllers\FriendController.cs" />
+    <Compile Include="Interfaces\IEventMessageGenerator.cs" />
+    <Compile Include="Models\BaseRepository.cs" />
+    <Compile Include="Models\Dialog\ConversationModel.cs" />
+    <Compile Include="Models\Dialog\DialogModel.cs" />
+    <Compile Include="Models\Dialog\DialogRepository.cs" />
+    <Compile Include="Models\Dialog\InterlocutorModel.cs" />
+    <Compile Include="Models\Dialog\MessageModel.cs" />
+    <Compile Include="Models\Friend\FriendshipModel.cs" />
+    <Compile Include="Models\Friend\FriendshipListModel.cs" />
+    <Compile Include="Models\UserProfile\UserInfoModel.cs" />
+    <Compile Include="Models\UserProfile\UserProfileRepository.cs" />
+    <Compile Include="Models\UserProfile\UsersListModel.cs" />
+    <Compile Include="Models\Validation\ValidateEmailAttribute.cs" />
+    <Compile Include="Models\Account\AccountRepository.cs" />
+    <Compile Include="Models\Account\AccountValidation.cs" />
+    <Compile Include="Models\Account\ChangePasswordModel.cs" />
+    <Compile Include="Models\Account\LogOnModel.cs" />
+    <Compile Include="Models\Validation\PropertiesMustMatchAttribute.cs" />
+    <Compile Include="Models\Account\RegisterModel.cs" />
+    <Compile Include="Models\CurrentUser.cs" />
+    <Compile Include="Models\Friend\FriendRepository.cs" />
+    <Compile Include="Models\Friend\FriendsListModel.cs" />
+    <Compile Include="Models\UserProfile\UserProfileModel.cs" />
+    <Compile Include="Models\Validation\ValidateUsernameAttribute.cs" />
+    <Compile Include="Services\AccountMembershipService.cs" />
+    <Compile Include="Components\Crypt.cs" />
+    <Compile Include="Services\FormsAuthenticationService.cs" />
+    <Compile Include="Components\SNMembershipProvider.cs" />
+    <Compile Include="Services\AccountRoleService.cs" />
+    <Compile Include="Components\Email.cs" />
+    <Compile Include="Components\SNRoleProvider.cs" />
+    <Compile Include="Components\TextFileLog.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ModeratorController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ICrypt.cs" />
+    <Compile Include="Interfaces\IFormsAuthenticationService.cs" />
+    <Compile Include="Interfaces\IMembershipService.cs" />
+    <Compile Include="Interfaces\INotifyService.cs" />
+    <Compile Include="Interfaces\IRoleService.cs" />
+    <Compile Include="Models\Validation\ValidatePasswordLengthAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\SocialNetworkDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SocialNetworkDB.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\SocialNetworkDB.mdf" />
+    <Content Include="App_Data\SocialNetworkDB_log.ldf">
+      <DependentUpon>SocialNetworkDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\logo.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Views\Account\ModeratorSetup.aspx" />
+    <Content Include="Views\Account\PasswordReset.aspx" />
+    <Content Include="Views\Account\PasswordResetFinal.aspx" />
+    <Content Include="Views\Account\QuestionAndAnswer.aspx" />
+    <Content Include="Views\Friend\Index.aspx" />
+    <Content Include="Views\Moderator\DeleteFriend.aspx" />
+    <Content Include="Views\Moderator\DeleteMessage.aspx" />
+    <Content Include="Views\Moderator\Dialogs.aspx" />
+    <Content Include="Views\Moderator\Friends.aspx" />
+    <Content Include="Views\Dialog\DialogControl.ascx" />
+    <Content Include="Views\Shared\General.aspx" />
+    <Content Include="Views\Shared\Http403.aspx" />
+    <Content Include="Views\Shared\Http404.aspx" />
+    <Content Include="Views\Home\Welcome.aspx" />
+    <Content Include="Views\Moderator\Accounts.aspx" />
+    <Content Include="Views\Moderator\DeleteAccount.aspx" />
+    <Content Include="Views\Shared\FriendsControl.ascx" />
+    <Content Include="Views\Dialog\InterlocutorsControl.ascx" />
+    <Content Include="Views\Dialog\SendMessageControl.ascx" />
+    <Content Include="Views\Shared\UserMenuControl.ascx" />
+    <Content Include="Views\Friend\UsersListControl.ascx" />
+    <Content Include="Views\Friend\AcceptFriend.aspx" />
+    <Content Include="Views\Friend\DeleteFriend.aspx" />
+    <Content Include="Views\Dialog\Index.aspx" />
+    <Content Include="Views\UserProfile\Edit.aspx" />
+    <Content Include="Views\UserProfile\Index.aspx" />
+    <Content Include="Views\Friend\SendRequest.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\SocialNetworkDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SocialNetworkDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appSettings.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Error\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Moderator\Moderator.Master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49709</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
